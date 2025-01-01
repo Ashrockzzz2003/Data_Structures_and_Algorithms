@@ -92,10 +92,23 @@ We’re excited to have you contribute! Whether it’s adding a new algorithm, f
 
 ## **Contributors**
 
-| **Contribution**              | **Contributor**                              |
-| ----------------------------- | -------------------------------------------- |
-| Python (.py)                  | [Ashwin Narayanan S](https://github.com/Ashrockzzz2003) |
-| C++ (.cpp)                    | [Aasil](https://github.com/mdxaasil)         |
+| **Contributor**                                                  | **Contribution**    |
+| ---------------------------------------------------------------- | ------------------- |
+| [Ashwin Narayanan S](https://github.com/Ashrockzzz2003)          | Python (.py) & Code Review |
+| [Aasil](https://github.com/mdxaasil)                             | C++ (.cpp) & Code Review |
+| [Shreyas Visweshwaran](https://github.com/FirefoxSRV)            | Code Review         |
+| [Vishal](https://github.com/VishalTheHuman)                      | Code Review         |
+| [Karthik G](https://github.com/adofm)                            | C++ (.cpp)          |
+| [Saran Hiruthik M](https://github.com/hirux06)                   | C++ (.cpp)          |
+| [Ashwin V A](https://github.com/WinterSun23)                     | C++ (.cpp)          |
+| [Adithya Menon R](https://github.com/adithya-menon-r)            | C++ (.cpp)          |
+| [Leela](https://github.com/Leela0o5)                             | Python (.py)        |
+| [Akshay KS](https://github.com/akshayks13)                       | Python (.py)        |
+| [Jayadev D](https://github.com/FLASH2332)                        | Go (.go)            |
+| [Nandgopal R Nair](https://github.com/Nandgopal-R)               | Go (.go)            |
+| [Keerthivasan S V](https://github.com/Keerthivasan-Venkitajalam) | Markdown (.md)      |
+| [Tharun D](https://github.com/tharun-0106)                       | Documentation (.md) |
+| [BIJJUDAMA](https://github.com/BIJJUDAMA)                        | Miscellaneous       |
 
 Want to see your name here? Contribute this Winter for AmWOC (Amrita Winter of Code) and make it! 🚀
 
