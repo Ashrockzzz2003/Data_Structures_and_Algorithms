@@ -63,7 +63,7 @@ def aStarAlgorithm(start_node, stop_node):
     # Loop until the open set is empty or the destination is found
     while len(open_set) > 0:
         n = None
-        # Select the node with the lowest f(n) = g(n) + h(n)
+        # Select the node with the lowest f(n) value
         for v in open_set:
             if n == None or g[v] + heuristic(v) < g[n] + heuristic(n):
                 n = v
@@ -88,7 +88,7 @@ def aStarAlgorithm(start_node, stop_node):
                             closed_set.remove(m)
                             open_set.add(m)
 
-        # If no path exists, return an error message
+        #If there is not path, the required mesasage is printed
         if n == None:
             print('Path does not exist!')
             return None
@@ -104,11 +104,11 @@ def aStarAlgorithm(start_node, stop_node):
             print('Path found: {}'.format(path))
             return path
 
-        # Move the current node from open set to closed set
+        # Move current node from open set to closed set
         open_set.remove(n)
         closed_set.add(n)
 
-    # If the loop exits without finding a path, return an error message
+    # If the loop exits without finding a path, it prints an error message
     print('Path does not exist!')
     return None
 
@@ -119,7 +119,7 @@ print(graphNodes)
 print()
 
 # Take user input for start and destination nodes
-point_a = input("Enter the Starting point: ")
+point_a = input("Enter the starting point: ")
 point_b = input("Enter the destination point: ")
 
 # Call the main algorithm function to find the shortest path of the given starting point and ending point
