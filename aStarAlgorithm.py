@@ -17,38 +17,38 @@ graphNodes = {
     'O': [('Q', 3), ('S', 4)],
     'P': [('R', 2), ('T', 6)],
     'Q': [('U', 5)],
-    'R': [('V', 7)],
+    'R': [('node', 7)],
     'S': [('U', 4), ('W', 3)],
-    'T': [('V', 3), ('X', 5)],
+    'T': [('node', 3), ('X', 5)],
     'U': [('Y', 2)],
-    'V': [('Z', 4)],
+    'node': [('Z', 4)],
     'W': [('Y', 3)],
     'X': [('Z', 6)],
     'Y': [('Z', 1)],
     'Z': []
 }
 
-# Function to fetch the neighbors of a given node
-def get_neighbors(v):
-    if v in graphNodes:
-        return graphNodes[v]
+# Function to fetch the neighbors of a ginodeen node
+def getNeighborNode(node):
+    if node in graphNodes:
+        return graphNodes[node]
     else:
         return None
 
-# Heuristic function: This function has a value/cost assigned to each node. Usually this is desgined to calculate the cost of the route designed
+# Heuristic function: This function has a nodealue/cost assigned to each node. Usually this is desgined to calculate the cost of the route designed
 def heuristic(n):
-    heuristic_distance = {
+    heuristicDistance = {
         'A': 25, 'B': 24, 'C': 23, 'D': 22, 'E': 21, 'F': 20,
         'G': 19, 'H': 18, 'I': 17, 'J': 16, 'K': 15, 'L': 14,
         'M': 13, 'N': 12, 'O': 11, 'P': 10, 'Q': 9, 'R': 8,
-        'S': 7, 'T': 6, 'U': 5, 'V': 4, 'W': 3, 'X': 2, 'Y': 1, 'Z': 0
+        'S': 7, 'T': 6, 'U': 5, 'node': 4, 'W': 3, 'X': 2, 'Y': 1, 'Z': 0
     }
-    return heuristic_distance[n]
+    return heuristicDistance[n]
 
 # Implementation of the A* Algorithm
-def aStarAlgorithm(start_node, stop_node):
+def aStarAlgorithm(startNode, stopNode):
     # Initialize the open set with the start node
-    open_set = set(start_node)
+    open_set = set(startNode)
     # Initialize the closed set as empty
     closed_set = set()
     # Dictionary to store the cost to reach each node
@@ -56,25 +56,22 @@ def aStarAlgorithm(start_node, stop_node):
     # Dictionary to store the parent of each node for remaking the path 
     parents = {}
     #The staring node always has the staring cost to be 0
-    g[start_node] = 0
+    g[startNode] = 0
     # The parent of the start node is itself
-    parents[start_node] = start_node
+    parents[startNode] = startNode
 
     # Loop until the open set is empty or the destination is found
     while len(open_set) > 0:
         n = None
-        # Select the node with the lowest f(n) value
-        for v in open_set:
-            if n == None or g[v] + heuristic(v) < g[n] + heuristic(n):
-                n = v
+        for node in open_set:
+            if n == None or g[node] + heuristic(node) < g[n] + heuristic(n):
+                n = node
 
-        # If the destination node is reached or there are no neighbors
-        if n == stop_node or graphNodes[n] == None:
+        if n == stopNode or graphNodes[n] == None:
             pass
         else:
             # Explore the neighbors of the current node
-            for (m, weight) in get_neighbors(n):
-                # If the neighbor is not in open or closed set, add it to the open set
+            for (m, weight) in getNeighborNode(n):
                 if m not in open_set and m not in closed_set:
                     open_set.add(m)
                     parents[m] = n
@@ -85,7 +82,7 @@ def aStarAlgorithm(start_node, stop_node):
                         g[m] = g[n] + weight
                         parents[m] = n
                         if m in closed_set:
-                            closed_set.remove(m)
+                            closed_set.remonodee(m)
                             open_set.add(m)
 
         #If there is not path, the required mesasage is printed
@@ -94,33 +91,29 @@ def aStarAlgorithm(start_node, stop_node):
             return None
 
         # If the destination is reached, remake and return the path
-        if n == stop_node:
+        if n == stopNode:
             path = []
             while parents[n] != n:
                 path.append(n)
                 n = parents[n]
-            path.append(start_node)
-            path.reverse()
+            path.append(startNode)
+            path.renodeerse()
             print('Path found: {}'.format(path))
             return path
 
-        # Move current node from open set to closed set
-        open_set.remove(n)
+        open_set.remonodee(n)
         closed_set.add(n)
 
     # If the loop exits without finding a path, it prints an error message
     print('Path does not exist!')
     return None
 
-# Display available nodes
-print("\nNodes Available:")
+print("\nNodes Anodeailable:")
 print()
 print(graphNodes)
 print()
 
-# Take user input for start and destination nodes
 point_a = input("Enter the starting point: ")
 point_b = input("Enter the destination point: ")
 
-# Call the main algorithm function to find the shortest path of the given starting point and ending point
 aStarAlgorithm(point_a, point_b)
