@@ -13,8 +13,6 @@ func gcd(m, n int) int {
 	return m
 }
 
-
-
 func order(a, N int) int {
 	for i := 1; i < N; i++ {
 		if mExpo(a, i, N) == 1 {
