@@ -82,6 +82,14 @@ Run Go programs using the `go run` command:
 go run sorting/quick_sort.go
 ```
 
+### `Run Rust Code`
+
+To run Rust code, first go to the cargo project directory and then run:
+
+```bash
+cargo run
+```
+
 ---
 
 ## **Contributing**
@@ -114,9 +122,11 @@ We’re excited to have you contribute! Whether it’s adding a new algorithm, f
 | [Yash](https://github.com/yendelevium)                           | Go (.go)                   |
 | [Mithileshwaran S](https://github.com/MithileshwaranS)           | Java (.java)               |
 | [Praneeth V](https://github.com/PraneethV-cmd)                   | Rust (.rs)                 |
+| [Kiran Rajeev](https://github.com/KiranRajeev-KV)                | Java (.java) & Rust (.rs)  |
 | [Keerthivasan S V](https://github.com/Keerthivasan-Venkitajalam) | Markdown (.md)             |
 | [Tharun D](https://github.com/tharun-0106)                       | Documentation (.md)        |
 | [BIJJUDAMA](https://github.com/BIJJUDAMA)                        | Miscellaneous              |
+
 
 Want to see your name here? Contribute this Winter for AmWOC (Amrita Winter of Code) and make it! 🚀
 
